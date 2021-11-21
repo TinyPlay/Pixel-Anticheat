@@ -14,6 +14,9 @@
  * @author          Ilya Rastorguev
  * @url             https://github.com/TinyPlay/Pixel-Anticheat
  */
+
+using PixelAnticheat.SecuredTypes;
+
 namespace PixelAnticheat.Examples
 {
     using UnityEngine;
@@ -73,6 +76,9 @@ namespace PixelAnticheat.Examples
             AntiCheat.Instance().GetDetector<TimeHackDetector>().OnCheatingDetected.AddListener(DetectorCallback);
             
             AntiCheat.Instance().GetDetector<TimeHackDetector>().StartDetector();
+
+            SecuredFloat myFloat = 24f;
+            Debug.Log(myFloat.GetEncrypted());
         }
 
         /// <summary>

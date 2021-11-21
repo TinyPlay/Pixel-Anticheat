@@ -49,7 +49,7 @@ namespace PixelAnticheat.Data
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static string GetEnryptionKey(string key)
+        public static string GetEnryptionKey()
         {
             return _encryptionKey;
         }
