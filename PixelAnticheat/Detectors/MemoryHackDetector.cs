@@ -35,6 +35,8 @@ namespace PixelAnticheat.Detectors
         [HideInInspector] public float vector3Epsilon = 0.1f;
         [HideInInspector] public float vector4Epsilon = 0.1f;
         [HideInInspector] public float quaternionEpsilon = 0.1f;
+        [HideInInspector] public float colorEpsilon = 0.1f;
+        [HideInInspector] public byte color32Epsilon = 1;
 
         // Prevent Direct Access
         private MemoryHackDetector() { }
@@ -51,6 +53,8 @@ namespace PixelAnticheat.Detectors
             vector3Epsilon = cfg.vector3Epsilon;
             vector4Epsilon = cfg.vector4Epsilon;
             quaternionEpsilon = cfg.quaternionEpsilon;
+            colorEpsilon = cfg.colorEpsilon;
+            color32Epsilon = cfg.color32Epsilon;
         }
         
         /// <summary>

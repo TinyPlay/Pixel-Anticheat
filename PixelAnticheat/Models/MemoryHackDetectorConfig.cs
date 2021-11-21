@@ -27,5 +27,7 @@ namespace PixelAnticheat.Models
         public float vector3Epsilon = 0.1f;
         public float vector4Epsilon = 0.1f;
         public float quaternionEpsilon = 0.1f;
+        public float colorEpsilon = 0.1f;
+        public byte color32Epsilon = 1;
     }
 }
