@@ -16,11 +16,11 @@
  */
 namespace PixelAnticheat.Examples
 {
+    using UnityEngine;
     using System.Collections.Generic;
     using PixelAnticheat.Detectors;
     using PixelAnticheat.Models;
-    using UnityEngine;
-    
+
     /// <summary>
     /// Example Script
     /// </summary>
@@ -71,6 +71,8 @@ namespace PixelAnticheat.Examples
             AntiCheat.Instance().GetDetector<WallHackDetector>().OnCheatingDetected.AddListener(DetectorCallback);
             AntiCheat.Instance().GetDetector<TeleportDetector>().OnCheatingDetected.AddListener(DetectorCallback);
             AntiCheat.Instance().GetDetector<TimeHackDetector>().OnCheatingDetected.AddListener(DetectorCallback);
+            
+            AntiCheat.Instance().GetDetector<TimeHackDetector>().StartDetector();
         }
 
         /// <summary>

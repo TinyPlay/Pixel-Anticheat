@@ -26,14 +26,20 @@ namespace PixelAnticheat.Editor.Editors
         private SerializedProperty floatEpsilon;
         private SerializedProperty vector2Epsilon;
         private SerializedProperty vector3Epsilon;
+        private SerializedProperty vector4Epsilon;
         private SerializedProperty quaternionEpsilon;
+        private SerializedProperty colorEpsilon;
+        private SerializedProperty color32Epsilon;
         
         public void OnEnable()
         {
             floatEpsilon = serializedObject.FindProperty("floatEpsilon");
             vector2Epsilon = serializedObject.FindProperty("vector2Epsilon");
             vector3Epsilon = serializedObject.FindProperty("vector3Epsilon");
+            vector4Epsilon = serializedObject.FindProperty("vector4Epsilon");
             quaternionEpsilon = serializedObject.FindProperty("quaternionEpsilon");
+            colorEpsilon = serializedObject.FindProperty("colorEpsilon");
+            color32Epsilon = serializedObject.FindProperty("color32Epsilon");
         }
         
         public override void OnInspectorGUI()
@@ -41,11 +47,14 @@ namespace PixelAnticheat.Editor.Editors
             serializedObject.Update();
             DrawDefaultInspector();
 
-            EditorGUILayout.PropertyField(floatEpsilon, new GUIContent("Float Epsilon", "Max allowed difference between encrypted and fake values in ObscuredFloat. Increase in case of false positives."));
-            EditorGUILayout.PropertyField(vector2Epsilon, new GUIContent("Vector2 Epsilon", "Max allowed difference between encrypted and fake values in ObscuredVector2. Increase in case of false positives."));
-            EditorGUILayout.PropertyField(vector3Epsilon, new GUIContent("Vector3 Epsilon", "Max allowed difference between encrypted and fake values in ObscuredVector3. Increase in case of false positives."));
+            EditorGUILayout.PropertyField(floatEpsilon, new GUIContent("Float Epsilon", "Max allowed difference between encrypted and fake values in SecuredFloat. Increase in case of false positives."));
+            EditorGUILayout.PropertyField(vector2Epsilon, new GUIContent("Vector2 Epsilon", "Max allowed difference between encrypted and fake values in SecuredVector2. Increase in case of false positives."));
+            EditorGUILayout.PropertyField(vector3Epsilon, new GUIContent("Vector3 Epsilon", "Max allowed difference between encrypted and fake values in SecuredVector3. Increase in case of false positives."));
+            EditorGUILayout.PropertyField(vector4Epsilon, new GUIContent("Vector4 Epsilon", "Max allowed difference between encrypted and fake values in SecuredVector4. Increase in case of false positives."));
             EditorGUILayout.PropertyField(quaternionEpsilon, new GUIContent("Quaternion Epsilon", "Max allowed difference between encrypted and fake values in ObscuredQuaternion. Increase in case of false positives."));
-
+            EditorGUILayout.PropertyField(colorEpsilon, new GUIContent("Color Epsilon", "Max allowed difference between encrypted and fake values in SecuredColor. Increase in case of false positives."));
+            EditorGUILayout.PropertyField(colorEpsilon, new GUIContent("Color32 Epsilon", "Max allowed difference between encrypted and fake values in SecuredColor32. Increase in case of false positives."));
+            
             GUIStyle textStyle = new GUIStyle();
             textStyle.normal.textColor = GUI.skin.label.normal.textColor;
             textStyle.alignment = TextAnchor.UpperLeft;

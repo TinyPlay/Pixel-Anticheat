@@ -14,14 +14,12 @@
  * @author          Ilya Rastorguev
  * @url             https://github.com/TinyPlay/Pixel-Anticheat
  */
-
-using PixelAnticheat.Models;
-
 namespace PixelAnticheat.SecuredTypes
 {
     using System;
     using UnityEngine;
     using PixelAnticheat.Detectors;
+    using PixelAnticheat.Models;
     
     /// <summary>
     /// Secured Vector3 Type
