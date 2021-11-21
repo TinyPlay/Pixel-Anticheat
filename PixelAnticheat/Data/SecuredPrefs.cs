@@ -982,6 +982,72 @@ namespace PixelAnticheat.Data
 			return cleanValue;
 		}
 		#endregion
+		
+		#region Vector4
+		/// <summary>
+		/// Sets the <c>value</c> of the preference identified by <c>key</c>.
+		/// </summary>
+		public static void SetVector4(string key, Vector4 value)
+		{
+#if UNITY_WEBPLAYER
+			try
+			{
+				PlayerPrefs.SetString(EncryptKey(key), EncryptVector4Value(key, value));
+			}
+			catch (PlayerPrefsException exception)
+			{
+				Debug.LogException(exception);
+			}
+#else
+			PlayerPrefs.SetString(EncryptKey(key), EncryptVector4Value(key, value));
+#endif
+		}
+
+		/// <summary>
+		/// Returns the value corresponding to <c>key</c> in the preference file if it exists.
+		/// If it doesn't exist, it will return Vector4.zero.
+		/// </summary>
+		public static Vector4 GetVector4(string key)
+		{
+			return GetVector4(key, Vector4.zero);
+		}
+
+		/// <summary>
+		/// Returns the value corresponding to <c>key</c> in the preference file if it exists.
+		/// If it doesn't exist, it will return <c>defaultValue</c>.
+		/// </summary>
+		public static Vector4 GetVector4(string key, Vector4 defaultValue)
+		{
+			string encrypted = GetEncryptedPrefsString(key, EncryptKey(key));
+			return encrypted == RAW_NOT_FOUND ? defaultValue : DecryptVector4Value(key, encrypted, defaultValue);
+		}
+
+		private static string EncryptVector4Value(string key, Vector4 value)
+		{
+			byte[] cleanBytes = new byte[16];
+			Buffer.BlockCopy(BitConverter.GetBytes(value.x), 0, cleanBytes, 0, 4);
+			Buffer.BlockCopy(BitConverter.GetBytes(value.y), 0, cleanBytes, 4, 4);
+			Buffer.BlockCopy(BitConverter.GetBytes(value.z), 0, cleanBytes, 8, 4);
+			Buffer.BlockCopy(BitConverter.GetBytes(value.w), 0, cleanBytes, 12, 4);
+			return EncryptData(key, cleanBytes, DataType.Vector4);
+		}
+
+		private static Vector4 DecryptVector4Value(string key, string encryptedInput, Vector4 defaultValue)
+		{
+			byte[] cleanBytes = DecryptData(key, encryptedInput);
+			if (cleanBytes == null)
+			{
+				return defaultValue;
+			}
+
+			Vector4 cleanValue;
+			cleanValue.x = BitConverter.ToSingle(cleanBytes, 0);
+			cleanValue.y = BitConverter.ToSingle(cleanBytes, 4);
+			cleanValue.z = BitConverter.ToSingle(cleanBytes, 8);
+			cleanValue.w = BitConverter.ToSingle(cleanBytes, 12);
+			return cleanValue;
+		}
+		#endregion
 
 		/// <summary>
 		/// Returns true if <c>key</c> exists in the SecuredPrefs or in regular PlayerPrefs.
@@ -1238,7 +1304,8 @@ namespace PixelAnticheat.Data
 			Vector3 = 50,
 			Quaternion = 55,
 			Color = 60,
-			Rect = 65
+			Rect = 65,
+			Vector4 = 70
 		}
 
 		/// <summary>
