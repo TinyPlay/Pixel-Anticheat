@@ -22,6 +22,7 @@ namespace PixelAnticheat
     using UnityEngine.Events;
     using PixelAnticheat.Detectors;
     using PixelAnticheat.Models;
+    using PixelAnticheat.SecuredTypes;
     
     /// <summary>
     /// Base Anti Cheat Class
@@ -112,6 +113,37 @@ namespace PixelAnticheat
             {
                 detector.StartDetector();
             }
+        }
+
+        /// <summary>
+        /// Setup Encryption Keys for Secured Types
+        /// </summary>
+        /// <param name="keys"></param>
+        public void SetupSecuredTypesKeys(SecuredTypesEncryptionKeys keys)
+        {
+            // Setup Base Types Keys
+            SecuredBool.SetNewCryptoKey(keys.boolKey);
+            SecuredByte.SetNewCryptoKey(keys.byteKey);
+            SecuredChar.SetNewCryptoKey(keys.charKey);
+            SecuredDecimal.SetNewCryptoKey(keys.decimalKey);
+            SecuredDouble.SetNewCryptoKey(keys.doubleKey);
+            SecuredFloat.SetNewCryptoKey(keys.floatKey);
+            SecuredInt.SetNewCryptoKey(keys.intKey);
+            SecuredLong.SetNewCryptoKey(keys.decimalKey);
+            SecuredSByte.SetNewCryptoKey(keys.sbyteKey);
+            SecuredShort.SetNewCryptoKey(keys.shortKey);
+            SecuredString.SetNewCryptoKey(keys.stringKey);
+            SecuredUInt.SetNewCryptoKey(keys.uintKey);
+            SecuredULong.SetNewCryptoKey(keys.ulongKey);
+            SecuredUShort.SetNewCryptoKey(keys.ushortKey);
+            
+            // Setup Additional Types Keys
+            SecuredColor.SetNewCryptoKey(keys.colorKey);
+            SecuredColor32.SetNewCryptoKey(keys.color32Key);
+            SecuredQuaternion.SetNewCryptoKey(keys.quaternionKey);
+            SecuredVector2.SetNewCryptoKey(keys.vector2Key);
+            SecuredVector3.SetNewCryptoKey(keys.vector3Key);
+            SecuredVector4.SetNewCryptoKey(keys.vector4Key);
         }
     }
 }
