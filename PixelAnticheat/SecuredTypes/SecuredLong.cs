@@ -35,10 +35,10 @@ namespace PixelAnticheat.SecuredTypes
         public static long cryptoKeyEditor = cryptoKey;
 #endif
         
-        private long currentCryptoKey;
-		private long hiddenValue;
-		private long fakeValue;
-		private bool inited;
+	    [SerializeField] private long currentCryptoKey;
+		[SerializeField] private long hiddenValue;
+		[SerializeField] private long fakeValue;
+		[SerializeField] private bool inited;
 
 		/// <summary>
 		/// Secured Long Constructor

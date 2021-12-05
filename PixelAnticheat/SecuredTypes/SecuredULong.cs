@@ -35,10 +35,10 @@ namespace PixelAnticheat.SecuredTypes
         public static ulong cryptoKeyEditor = cryptoKey;
 #endif
 
-        private ulong currentCryptoKey;
-		private ulong hiddenValue;
-		private ulong fakeValue;
-		private bool inited;
+        [SerializeField] private ulong currentCryptoKey;
+        [SerializeField] private ulong hiddenValue;
+        [SerializeField] private ulong fakeValue;
+		[SerializeField] private bool inited;
 
 		/// <summary>
 		/// Secured UShort Constructor
