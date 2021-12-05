@@ -35,10 +35,10 @@ namespace PixelAnticheat.SecuredTypes
         public static sbyte cryptoKeyEditor = cryptoKey;
 #endif
 
-        private sbyte currentCryptoKey;
-		private sbyte hiddenValue;
-		private sbyte fakeValue;
-		private bool inited;
+        [SerializeField] private sbyte currentCryptoKey;
+        [SerializeField] private sbyte hiddenValue;
+        [SerializeField] private sbyte fakeValue;
+        [SerializeField] private bool inited;
 
 		/// <summary>
 		/// Secured SByte Constructor
