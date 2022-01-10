@@ -9,6 +9,10 @@ Pixel Anti-Cheat was developed **for Unity** and is supported **on versions abov
 **Pixe Incubator Discord:** https://discord.com/invite/Ee9sYsttWP<br/>
 **VK Community:** https://vk.com/pixelincubator<br/>
 
+## Demo Game
+You can test the Anti-Cheat toolkit in the our demo game:<br/>
+https://play.google.com/store/apps/details?id=com.TinyPlay.TinyMafia
+
 ## Documentation
 Read full documentation for Pixel Anti-Cheat <a href="https://github.com/TinyPlay/Pixel-Anticheat/wiki/">here</a>.
 
