@@ -31,7 +31,7 @@ namespace PixelAnticheat.Data
     /// </summary>
     public static class NetworkTime
     {
-        private const string networkTimeServer = "https://worldtimeapi.org/api/timezone/Etc/UTC";
+        private const string networkTimeServer = "https://api.tinydev.ru/getTime/";
         
         /// <summary>
         /// Get Current Network Time (in UTC)
