@@ -6,8 +6,7 @@ This toolkit is designed to keep your game safe. Pixel Anticheat is a set of use
 Pixel Anti-Cheat was developed **for Unity** and is supported **on versions above 2017+**. **You can use this set of libraries absolutely free of charge.**
 <br/><br/>
 **The developers of the library:** https://github.com/TinyPlay<br/>
-**Pixe Incubator Discord:** https://discord.com/invite/Ee9sYsttWP<br/>
-**VK Community:** https://vk.com/pixelincubator<br/>
+**Our Website:** https://tinyplay.games/<br/>
 
 ## Demo Game
 You can test the Anti-Cheat toolkit in the our demo game:<br/>
