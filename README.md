@@ -1,5 +1,13 @@
 ![pixel-anticheat](https://sun9-28.userapi.com/impg/oDGcKW217dDN39yjIHkjJ7C8FFIzxaHGAZPQTA/kGBZdrz61nI.jpg?size=1280x720&quality=95&sign=c93a298b7cace99acb1d1756d10fea06&type=album)
 
+## Obsolete Warning!
+This library is obsolete is not supported until 09.03.2023.
+**Please, use our actual Security Toolkit**!
+
+<a href="https://github.com/TinyPlay/PixelSecurityToolkit">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=TinyPlay&repo=PixelSecurityToolkit&theme=synthwave" />
+</a>
+
 # Welcome to the Pixel Anti-Cheat!
 This toolkit is designed to keep your game safe. Pixel Anticheat is a set of useful modules to prevent cheating and game memory intrusion.<br/><br/>
 
